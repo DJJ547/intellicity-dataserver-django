@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'intellicity_data_server_django.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'intellicity-dataserver-django.settings')
 
 application = get_wsgi_application()
