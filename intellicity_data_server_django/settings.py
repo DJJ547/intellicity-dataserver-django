@@ -91,7 +91,7 @@ DATABASES = {
         # to run locally:
         # 'USER' : 'jai',
         # to run in server:
-        # 'USER': 'dataserver',
+        'USER': 'dataserver',
         'PASSWORD': 'cmpe281',
         'HOST': '54.193.47.7',  # Or the IP address of your MySQL server
         'PORT': '3306',       # MySQL default port
