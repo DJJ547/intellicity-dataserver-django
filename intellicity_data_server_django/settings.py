@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-%^f$uu8!d(ct)04ep%w%krc46m&3+ku7!x4$nlxs(vg$8ps7tl
 DEBUG = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:8000",
+    'http://localhost:3000',
+    'http://localhost:8000',
 ]
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Allow all headers
@@ -36,14 +36,6 @@ CORS_ALLOW_ALL_HEADERS = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-
-
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'POST',
-    'PUT',
-]
 
 CORS_ALLOW_METHODS = [
     "DELETE",
@@ -129,7 +121,7 @@ DATABASES = {
         # to run locally:
         # 'USER' : 'jai',
         # to run in server:
-        'USER': 'dataserver',
+        'USER': 'cmpe281',
         'PASSWORD': 'cmpe281',
         # aws ec2 mysql server's id addr
         'HOST': '54.215.154.45',
