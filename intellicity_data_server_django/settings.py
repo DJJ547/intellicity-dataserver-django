@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +29,7 @@ SECRET_KEY = 'django-insecure-%^f$uu8!d(ct)04ep%w%krc46m&3+ku7!x4$nlxs(vg$8ps7tl
 DEBUG = True
 
 CORS_ALLOWED_ORIGINS = ['*']
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '54.215.106.67']
 # Allow all headers
 CORS_ALLOW_ALL_HEADERS = True
 
@@ -115,14 +117,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'intellicity',
-        # to run locally:
-        # 'USER' : 'jai',
-        # to run in server:
-        'USER': 'cmpe281',
-        'PASSWORD': 'cmpe281',
-        # aws ec2 mysql server's id addr
-        'HOST': '54.215.154.45',
-        'PORT': '3306',       # MySQL default port
+        'USER': os.getenv('mysqlusername'),
+        'PASSWORD': os.getenv('mysqlpassword'),
+        'HOST': os.getenv('mysqlhost'),
+        'PORT': os.getenv('mysqlport'),
     }
 }
 
