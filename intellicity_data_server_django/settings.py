@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%^f$uu8!d(ct)04ep%w%krc46m&3+ku7!x4$nlxs(vg$8ps7tl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aws_ec2_dataserver', '54.193.47.7']
+ALLOWED_HOSTS = ['aws_ec2_dataserver', '54.193.47.7','127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auth_system',
+    'notifications',
+    'dashboard',
     'rest_framework',
     'corsheaders',
 ]
@@ -93,7 +95,8 @@ DATABASES = {
         # to run in server:
         'USER': 'dataserver',
         'PASSWORD': 'cmpe281',
-        'HOST': '54.215.154.45',  # Or the IP address of your MySQL server
+        # aws ec2 mysql server's id addr
+        'HOST': '54.215.154.45',
         'PORT': '3306',       # MySQL default port
     }
 }
@@ -156,7 +159,7 @@ CORS_ALLOW_ALL_HEADERS = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-# Allow all methods
+
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
