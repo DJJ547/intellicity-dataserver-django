@@ -5,7 +5,7 @@ class User(models.Model):
     password = models.CharField(max_length=100, null=False)
     firstname = models.CharField(max_length=100, null=False)
     lastname = models.CharField(max_length=100, null=False)
-    is_agent = models.IntegerField(max_length=1, null=True)
+    is_agent = models.IntegerField(null=True)
 
     class Meta:
         db_table = 'users'
