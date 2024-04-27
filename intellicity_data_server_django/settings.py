@@ -37,7 +37,7 @@ CORS_ALLOWED_ORIGINS = [
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # for deploy
 ALLOWED_HOSTS = [
-    f'{os.getenv('serverhost')}', 
+    os.getenv('serverhost'), 
     'localhost',
     '127.0.0.1'
 ]
