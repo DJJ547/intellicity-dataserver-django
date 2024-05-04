@@ -63,8 +63,8 @@ class MysqlProcessor:
                 data = line.strip().split(',')
                 parsed_datetime = timezone.make_aware(datetime.strptime(
                     data[3], "%m/%d/%Y %H:%M:%S"), timezone.get_current_timezone())
-                current_time = timezone.make_aware(datetime.strptime(
-                    current_time, "%m/%d/%Y %H:%M:%S"), timezone.get_current_timezone())
+                current_time = timezone.make_aware(
+                    current_time, timezone.get_current_timezone())
                 if current_time.hour == parsed_datetime.hour and current_time.minute == parsed_datetime.minute:
                     if Incident.objects.filter(id=data[0]).exists():
                         return False
