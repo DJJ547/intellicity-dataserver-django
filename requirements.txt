@@ -5,3 +5,4 @@ PyJWT
 python-dotenv
 django-cors-headers
 djangorestframework-simplejwt
+pymongo

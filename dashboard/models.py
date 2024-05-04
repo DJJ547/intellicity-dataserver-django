@@ -38,3 +38,29 @@ class Drone(models.Model):
 
     class Meta:
         db_table = 'drones'
+
+class Incident(models.Model):
+    id = models.IntegerField(primary_key=True, null=False)
+    timestamp = models.DateTimeField(null=False)
+    latitude = models.DecimalField(null=False, max_digits=9, decimal_places=5)
+    longitude = models.DecimalField(null=False, max_digits=9, decimal_places=5)
+    district = models.IntegerField()
+    description = models.CharField(max_length=500)
+    location = models.CharField(max_length=45)
+    area = models.CharField(max_length=45)
+    
+    class Meta:
+        db_table = 'dashboard_incidents'
+        
+
+class Congestion(models.Model):
+    id = models.AutoField(primary_key=True)
+    timestamp = models.DateTimeField(null=False)
+    latitude = models.DecimalField(null=False, max_digits=9, decimal_places=5)
+    longitude = models.DecimalField(null=False, max_digits=9, decimal_places=5)
+    district = models.IntegerField()
+    address = models.CharField(max_length=100)
+    
+    class Meta:
+        db_table = 'dashboard_congestions'
+    
