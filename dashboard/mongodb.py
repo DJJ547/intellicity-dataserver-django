@@ -17,7 +17,7 @@ class MongoDBProcessor:
             record_index = timedelta(minutes=datetime.strptime(time, "%Y-%m-%dT%H:%M:%S").hour * 60 + datetime.strptime(time, "%Y-%m-%dT%H:%M:%S").minute) // timedelta(minutes=5) - 1
             if len(iot['timeseries']) < 288 or not iot['timeseries'][record_index]['Speed'] or iot['timeseries'][record_index]['Speed'] >= 30:
                 continue
-            print(iot['timeseries'][record_index]['Speed'])
+            # print(iot['timeseries'][record_index]['Speed'])
             data = {
                 'latitude': iot['location'][0],
                 'longitude': iot['location'][1],
