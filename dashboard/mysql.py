@@ -61,10 +61,8 @@ class MysqlProcessor:
         with open(os.path.join(settings.STATIC_DIRS[0], 'all_text_chp_incident_day_2024_04_30.txt'), 'r') as file:
             for line in file:
                 data = line.strip().split(',')
-                parsed_datetime = timezone.make_aware(datetime.strptime(
-                    data[3], "%m/%d/%Y %H:%M:%S"), timezone.get_current_timezone())
-                current_time = timezone.make_aware(
-                    current_time, timezone.get_current_timezone())
+                parsed_datetime = datetime.strptime(data[3], "%m/%d/%Y %H:%M:%S")
+                current_time = timezone.make_aware(current_time, timezone.get_current_timezone())
                 if current_time.hour == parsed_datetime.hour and current_time.minute == parsed_datetime.minute:
                     if Incident.objects.filter(id=data[0]).exists():
                         return False
