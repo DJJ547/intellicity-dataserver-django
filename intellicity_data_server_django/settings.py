@@ -30,16 +30,11 @@ DEBUG = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://" + os.getenv('frontend_ip')+":"+os.getenv('frontend_port'),
-    "http://localhost:8000",
+    "http://localhost:3000",
 ]
-# for local host
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 # for deploy
-ALLOWED_HOSTS = [
-    os.getenv('serverhost'), 
-    'localhost',
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = ['*']
 # Allow all headers
 CORS_ALLOW_ALL_HEADERS = True
 
