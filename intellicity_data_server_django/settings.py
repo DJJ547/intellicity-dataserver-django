@@ -29,9 +29,8 @@ SECRET_KEY = 'django-insecure-%^f$uu8!d(ct)04ep%w%krc46m&3+ku7!x4$nlxs(vg$8ps7tl
 DEBUG = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:8000", 
-    f"http://{os.getenv('myhost')}"
+    "http://" + os.getenv('frontend_ip')+":"+os.getenv('frontend_port'),
+    "http://localhost:8000",
 ]
 # for local host
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1']
